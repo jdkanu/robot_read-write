@@ -1,4 +1,4 @@
-classdef MCMC < BetterHandle
+    classdef MCMC < BetterHandle
     %%MCMC Simple MH and Gibbs moves for the MotorProgram Class
     %%
     %%   This class provides some simple moves for sampling from
