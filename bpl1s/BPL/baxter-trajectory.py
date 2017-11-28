@@ -6,7 +6,12 @@ eng = matlab.engine.start_matlab()
 eng.eval('addpath(genpath(pwd))')
 #out = StringIO.StringIO()
 #err = StringIO.StringIO()
-eng.demo_fit_test(nargout=0) #stdout=out, stderr=err)
+
+#eng.demo_fit_test(nargout=0) #stdout=out, stderr=err)
+
+# Can replace Aa with other images
+G = eng.fitToImage('Aa.png')
+eng.workspace['G'] = G
 
 # This is an array of lists of matlab.object objects
 strokes = np.array(eng.eval('G.models{1}.motor'))
@@ -25,3 +30,4 @@ for i in range(len(strokes)):
 #eng.addpath('../../python')
 #eng.triarea(nargout=0)
 #print tf
+
